@@ -1,0 +1,2 @@
+# start and run your entire multi-container Docker application in detached mode.
+docker-compose up -d
