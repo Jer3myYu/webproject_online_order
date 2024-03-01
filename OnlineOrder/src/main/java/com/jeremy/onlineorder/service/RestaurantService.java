@@ -6,6 +6,7 @@ import com.jeremy.onlineorder.model.MenuItemDto;
 import com.jeremy.onlineorder.model.RestaurantDto;
 import com.jeremy.onlineorder.repository.MenuItemRepository;
 import com.jeremy.onlineorder.repository.RestaurantRepository;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 
@@ -14,9 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/*
- * The RestaurantService class in a Spring application aggregates and processes restaurant and menu item information from databases, transforming them into a structured format suitable for frontend display or further business logic processing, by creating a cohesive list of restaurant details along with their associated menu items.
- */
+
 @Service
 public class RestaurantService {
 
@@ -26,13 +25,14 @@ public class RestaurantService {
 
 
     public RestaurantService(
-            RestaurantRepository restaurantRepository,
-            MenuItemRepository menuItemRepository) {
-        this.restaurantRepository = restaurantRepository;
+            MenuItemRepository menuItemRepository,
+            RestaurantRepository restaurantRepository) {
         this.menuItemRepository = menuItemRepository;
+        this.restaurantRepository = restaurantRepository;
     }
 
 
+    @Cacheable("restaurants")
     public List<RestaurantDto> getRestaurants() {
         List<RestaurantEntity> restaurantEntities = restaurantRepository.findAll();
         List<MenuItemEntity> menuItemEntities = menuItemRepository.findAll();
@@ -50,3 +50,4 @@ public class RestaurantService {
         return results;
     }
 }
+
