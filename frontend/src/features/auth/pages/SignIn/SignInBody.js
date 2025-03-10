@@ -17,7 +17,7 @@ const SignInBody = () => {
       <h2 className={styles.title}>Welcome back!</h2>
       <form className={styles.form} onSubmit={handleSignIn}>
         <div className={styles.formGroup}>
-          <label htmlFor="email" className={styles.label}>Email</label>
+          <label htmlFor="email" className={`${styles.label} ${styles.text}`}>Email</label>
           <input
             type="email"
             id="email"
@@ -28,7 +28,7 @@ const SignInBody = () => {
           />
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="password" className={styles.label}>Password</label>
+          <label htmlFor="password" className={`${styles.label} ${styles.text}`}>Password</label>
           <input
             type="password"
             id="password"
@@ -39,7 +39,7 @@ const SignInBody = () => {
           />
         </div>
         <div className={styles.buttonContainer}>
-          <AuthToggleButton type="submit">Sign In</AuthToggleButton>
+          <AuthToggleButton variant="submit">Sign In</AuthToggleButton>
         </div>
       </form>
     </div>

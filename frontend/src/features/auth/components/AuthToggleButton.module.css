@@ -19,7 +19,17 @@
 }
 
 .authToggleButtonSubmit {
-    /* Custom styles for the submit button variant */
-    background: #007bff;
+    width: 100%; /* full width for submit */
+    background: #2C2C2C;
     color: #fff;
+}
+
+.authToggleButtonSubmit:hover {
+    background: #25b83d;
+}
+  
+.authToggleButtonSecondary {
+    background: #28a745;
+    color: #fff;
+    /* other variant-specific styles */
 }
