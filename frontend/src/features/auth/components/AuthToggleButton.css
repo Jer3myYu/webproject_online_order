@@ -1,0 +1,19 @@
+.auth-toggle-button {
+    display: flex;
+    width: 67px;
+    height: 34px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex: 0 0 auto;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+  
+.auth-toggle-button:hover {
+    background: #e0e0e0;
+}
