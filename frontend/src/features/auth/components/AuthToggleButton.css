@@ -17,3 +17,9 @@
 .auth-toggle-button:hover {
     background: #e0e0e0;
 }
+
+.auth-toggle-button--submit {
+    /* Custom styles for the submit button variant */
+    background: #007bff;
+    color: #fff;
+  }
