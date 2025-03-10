@@ -1,14 +1,1 @@
-.roboto-base {
-    font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-  }
-  
-.roboto-login-title {
-    font-weight: 700;
-}
-  
-.roboto-login-text {
-    font-weight: 400;
-}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,700;1,700&display=swap');

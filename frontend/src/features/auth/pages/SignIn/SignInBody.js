@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './SignInBody.css';
+import styles from './SignInBody.module.css';
 import AuthToggleButton from '../../components/AuthToggleButton';
 
 const SignInBody = () => {
@@ -13,32 +13,32 @@ const SignInBody = () => {
   };
 
   return (
-    <div className="signin-body">
-      <h2 className="signin-body__title roboto-login-title">Welcome back!</h2>
-      <form className="signin-body__form" onSubmit={handleSignIn}>
-        <div className="signin-body__form-group">
-          <label htmlFor="email" className="signin-body__label">Email</label>
+    <div className={styles.signInBody}>
+      <h2 className={styles.title}>Welcome back!</h2>
+      <form className={styles.form} onSubmit={handleSignIn}>
+        <div className={styles.formGroup}>
+          <label htmlFor="email" className={styles.label}>Email</label>
           <input
             type="email"
             id="email"
-            className="signin-body__input"
+            className={styles.input}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
           />
         </div>
-        <div className="signin-body__form-group">
-          <label htmlFor="password" className="signin-body__label">Password</label>
+        <div className={styles.formGroup}>
+          <label htmlFor="password" className={styles.label}>Password</label>
           <input
             type="password"
             id="password"
-            className="signin-body__input"
+            className={styles.input}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
           />
         </div>
-        <div className="signin-body__button auth-toggle-button--submit">
+        <div className={styles.buttonContainer}>
           <AuthToggleButton type="submit">Sign In</AuthToggleButton>
         </div>
       </form>

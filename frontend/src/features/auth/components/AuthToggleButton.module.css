@@ -1,4 +1,4 @@
-.auth-toggle-button {
+.authToggleButton {
     display: flex;
     width: 67px;
     height: 34px;
@@ -14,12 +14,12 @@
     transition: background 0.3s ease;
 }
   
-.auth-toggle-button:hover {
+.authToggleButton:hover {
     background: #e0e0e0;
 }
 
-.auth-toggle-button--submit {
+.authToggleButtonSubmit {
     /* Custom styles for the submit button variant */
     background: #007bff;
     color: #fff;
-  }
+}

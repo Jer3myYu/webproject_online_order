@@ -1,9 +1,9 @@
 import React from 'react';
-import './AuthToggleButton.css';
+import styles from './AuthToggleButton.module.css';
 
 const AuthToggleButton = ({ children, onClick, type = 'button', ...props }) => {
   return (
-    <button className="auth-toggle-button" onClick={onClick} type={type} {...props}>
+    <button className={styles.authToggleButton} onClick={onClick} type={type} {...props}>
       {children}
     </button>
   );

@@ -1,12 +1,12 @@
 import React from 'react';
-import './AuthHeader.css';
+import styles from './AuthHeader.module.css';
 import AuthToggleButton from './AuthToggleButton';
 
 const AuthHeader = () => {
   return (
-    <header className="auth-header">
-      <div className="auth-header__logo"> My App Logo</div>
-      <div className="auth-header__actions">
+    <header className={styles.authHeader}>
+      <div className={styles.logo}> My App Logo</div>
+      <div className={styles.authActions}>
         <AuthToggleButton onClick={() => console.log('Sign In clicked')}>
           Sign In
         </AuthToggleButton>
