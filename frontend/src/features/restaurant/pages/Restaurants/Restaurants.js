@@ -1,8 +1,8 @@
 import React from 'react';
-import restaurants from './restaurantMock.json';
-import RestaurantCard from './RestaurantCard';
+import restaurants from '../../components/restaurantMock.json';
+import RestaurantCard from '../../components/RestaurantCard';
 
-const RestaurantList = () => {
+const Restaurants = () => {
   return (
     <div>
       {restaurants.map((restaurant) => (
@@ -12,4 +12,4 @@ const RestaurantList = () => {
   );
 };
 
-export default RestaurantList;
+export default Restaurants;
