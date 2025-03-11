@@ -39,7 +39,7 @@ const SignInBody = () => {
           />
         </div>
         <div className={styles.buttonContainer}>
-          <AuthToggleButton variant="submit">Sign In</AuthToggleButton>
+          <AuthToggleButton type="submit" variant="submit">Sign In</AuthToggleButton>
         </div>
       </form>
     </div>
