@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Burger King",
+      "address": "773 N Mathilda Ave, Sunnyvale, CA 94085",
+      "imageUrl": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1920,format=auto,quality=50/https://cdn.doordash.com/media/store%2Fheader%2F10171.png",
+      "phone": "(408) 736-0101"
+    },
+    {
+      "name": "SGD Tofu House",
+      "address": "3450 El Camino Real #105, Santa Clara, CA 95051",
+      "imageUrl": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1920,format=auto,quality=50/https://cdn.doordash.com/media/store%2Fheader%2F1579.jpg",
+      "phone": "(408) 261-3030"
+    },
+    {
+      "name": "Fashion Wok",
+      "address": "163 S Murphy Ave, Sunnyvale, CA 94086",
+      "imageUrl": "https://img.cdn4dd.com/cdn-cgi/image/fit=contain,width=1920,format=auto,quality=50/https://cdn.doordash.com/media/store%2Fheader%2F273997.jpg",
+      "phone": "(408) 739-8866"
+    }
+]
+  
