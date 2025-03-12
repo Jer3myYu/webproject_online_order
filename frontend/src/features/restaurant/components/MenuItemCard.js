@@ -2,13 +2,8 @@ import React from 'react';
 import styles from '../styles/MenuItemCard.module.css';
 import classNames from 'classnames';
 
-const MenuItemCard = ({ item, mode }) => {
+const MenuItemCard = ({ item, mode, onButtonClick }) => {
   // mode: "add" for menu page, "remove" for cart drawer
-  // Handler for adding a food item to the cart
-  const handleAddToCart = () => {
-    console.log(`Added ${item.name} to cart`);
-    // Later, add integration with your cart logic here
-  };
 
   return (
     <div className={styles.card}>
@@ -22,7 +17,7 @@ const MenuItemCard = ({ item, mode }) => {
           [styles.addButton]: mode === 'add',
           [styles.removeButton]: mode === 'remove'
         })}
-        onClick={handleAddToCart}
+        onClick={onButtonClick}
       >
         {mode === 'add' ? '+' : '−'}
       </button>
