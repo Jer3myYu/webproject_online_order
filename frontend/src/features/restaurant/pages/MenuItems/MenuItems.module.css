@@ -23,7 +23,7 @@
     cursor: pointer;
 }
   
-.foodGrid {
+.itemGrid {
     display: flex;
     flex-wrap: wrap;
     max-width: 1200px;

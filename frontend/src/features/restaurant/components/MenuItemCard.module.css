@@ -35,13 +35,11 @@
     color: #888;
     margin: 4px 0 0;
 }
-  
-.addButton {
+
+.actionButton {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    background: #2C2C2C;
-    color: #fff;
     border: none;
     border-radius: 50%;
     width: 32px;
@@ -51,7 +49,22 @@
     transition: background 0.3s ease;
 }
   
-.addButton:hover {
-    background: #0056b3;
+.addButton {
+    background: #2C2C2C;
+    color: #fff;
+    transition: background 0.3s ease;
 }
   
+.addButton:hover {
+    background: rgba(44, 44, 44, 0.7);
+}
+  
+.removeButton {
+    background: #2C2C2C;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+  
+.removeButton:hover {
+    background: rgba(44, 44, 44, 0.7);
+}
