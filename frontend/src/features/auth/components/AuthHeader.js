@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import styles from './AuthHeader.module.css';
+import styles from '../styles/AuthHeader.module.css';
 import AuthToggleButton from './AuthToggleButton';
 
 const AuthHeader = () => {

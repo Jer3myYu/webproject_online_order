@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './MenuItemCard.module.css';
+import styles from '../styles/MenuItemCard.module.css';
 import classNames from 'classnames';
 
 const MenuItemCard = ({ item, mode }) => {

@@ -1,8 +1,8 @@
 import React from 'react';
 import AuthHeader from '../../../auth/components/AuthHeader';
 import MenuItemCard from '../../components/MenuItemCard';
-import styles from './MenuItems.module.css';
-import itemData from '../../components/menuItemMock.json';
+import styles from '../../styles/MenuItems.module.css';
+import itemData from '../../data/menuItemMock.json';
 
 const RestaurantFoodList = () => {
   // Handler for the back button (implement navigation as needed)
@@ -31,7 +31,7 @@ const RestaurantFoodList = () => {
         {/* Grid of item cards */}
         <div className={styles.itemGrid}>
           {itemData.map((item) => (
-            <MenuItemCard key={item.id} item={item} mode="remove" />
+            <MenuItemCard key={item.id} item={item} mode="add" />
           ))}
         </div>
         <div className={styles.topBar}>

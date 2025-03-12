@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './SignUpBody.module.css';
+import styles from '../../styles/SignUpBody.module.css';
 import AuthToggleButton from '../../components/AuthToggleButton';
 
 const SignUpBody = () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import restaurants from '../../components/restaurantMock.json';
+import restaurants from '../../data/restaurantMock.json';
 import RestaurantCard from '../../components/RestaurantCard';
 
 const Restaurants = () => {
