@@ -45,9 +45,22 @@
     padding: 24px;
     box-sizing: border-box;
     overflow-y: auto;
-    transition-delay: 5s;
-    transition: ease-in-out 2s; /* 0.5s delay to allow left panel animation to complete */
     border: 0.5px solid #B3B3B3;
     border-radius: 8px;
+}
+
+.rightPanel.show {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
   

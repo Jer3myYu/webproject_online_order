@@ -6,6 +6,7 @@ import styles from '../styles/Checkout.module.css';
 
 const Checkout = () => {
   const [activeStep, setActiveStep] = useState(0);
+  const [showRightPanel, setShowRightPanel] = useState(false);
   const [deliveryMethod, setDeliveryMethod] = useState('delivery');
   const [selectedPayment, setSelectedPayment] = useState('');
   const [deliveryInfoEditable, setDeliveryInfoEditable] = useState(false);
@@ -25,6 +26,14 @@ const Checkout = () => {
     setActiveStep(1);
   };
 
+  // Handler that listens for the end of the left panel transition
+  const handleTransitionEnd = (event) => {
+    // Optionally, check which CSS property finished if necessary:
+    if (event.propertyName === 'transform') {
+      setShowRightPanel(true);
+    }
+  };
+
   return (
     <div className={styles.checkoutPage}>
       <AuthHeader />
@@ -36,6 +45,7 @@ const Checkout = () => {
               ? styles.leftPanel
               : `${styles.leftPanel} ${styles.leftPanelShifted}`
           }
+          onTransitionEnd={handleTransitionEnd}
         >
           <OrderSummary
             cartItems={cartItems}
@@ -49,8 +59,8 @@ const Checkout = () => {
           />
         </div>
         {/* Right Panel: Checkout Details */}
-        {activeStep === 1 && (
-          <div className={styles.rightPanel}>
+        {showRightPanel && (
+          <div className={`${styles.rightPanel} ${styles.show}`}>
             <CheckoutDetails
               selectedPayment={selectedPayment}
               setSelectedPayment={setSelectedPayment}
