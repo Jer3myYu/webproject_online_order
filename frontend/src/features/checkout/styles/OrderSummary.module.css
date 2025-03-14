@@ -1,0 +1,84 @@
+.orderSummary {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+  
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+  
+.cartItems {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 16px;
+}
+  
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+  
+.itemName {
+    font-size: 16px;
+}
+  
+.itemPrice {
+    font-size: 16px;
+}
+  
+.subtitle {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 16px 0 8px;
+}
+  
+.deliveryOptions button {
+    margin-right: 8px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    background: #fff;
+    cursor: pointer;
+}
+  
+.deliveryOptions button.selected {
+    background: #007bff;
+    color: #fff;
+}
+  
+.summaryTotals {
+    margin: 16px 0;
+}
+  
+.row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+  
+.rowTotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 8px;
+}
+  
+.nextStepButton {
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+  
+.nextStepButton:hover {
+    background: #0056b3;
+}
+  

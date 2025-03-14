@@ -1,0 +1,47 @@
+/* src/styles/CheckoutPage.module.css */
+.checkoutPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+  
+.container {
+    position: relative;
+    width: 100%;
+    flex: 1;
+    overflow: hidden;
+}
+  
+/* 
+   The left panel is initially centered in the container.
+   We position it absolutely with left: 50% and translateX(-50%) to center it.
+*/
+.leftPanel {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    transition: transform 0.5s ease-in-out;
+}
+  
+/* When active step changes, shift the left panel to the left */
+.leftPanelShifted {
+    transform: translateX(-100%);
+}
+  
+/* The right panel is fixed on the right side */
+.rightPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: #f9f9f9;
+    padding: 24px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: opacity 0.5s ease-in-out;
+}
+  
