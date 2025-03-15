@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../styles/CheckoutDetails.module.css';
+import DeliveryInfoForm from './DeliveryInfoForm';
+import CreditCardForm from './CreditCardForm';
 
 const CheckoutDetails = ({
   selectedPayment,
@@ -7,13 +9,22 @@ const CheckoutDetails = ({
   deliveryInfoEditable,
   setDeliveryInfoEditable
 }) => {
-  const [deliveryAddress, setDeliveryAddress] = useState('123 Main St, City, State');
-  const [firstName, setFirstName] = useState('John');
-  const [lastName, setLastName] = useState('Doe');
+  const [formData, setFormData] = useState({
+    firstName: 'John',
+    lastName: 'Doe',
+    phone: '',
+    streetAddress: '123 Main St',
+    city: 'City',
+    state: 'State',
+    zipCode: '',
+    email: ''
+  });
+
   const [creditCardInfo, setCreditCardInfo] = useState({
     cardNumber: '',
-    expiry: '',
-    cvv: ''
+    cvv: '',
+    nameOnCard: '',
+    expiry: ''
   });
 
   const handlePaymentChange = (method) => {
@@ -27,68 +38,50 @@ const CheckoutDetails = ({
   return (
     <div className={styles.checkoutDetails}>
       <h2 className={styles.greeting}>
-        Hi, {firstName} {lastName}
+        Hi, {formData.firstName} {formData.lastName}
       </h2>
       <div className={styles.addressSection}>
-        <p className={styles.address}>{deliveryAddress}</p>
+        <p className={styles.address}>{formData.streetAddress}, {formData.city}, {formData.state}</p>
         <button className={styles.changeButton} onClick={toggleDeliveryInfo}>
           Change Delivery Information
         </button>
       </div>
       <h3 className={styles.sectionTitle}>Delivery Information</h3>
       <div className={styles.deliveryInfo}>
-        <input
-          type="text"
-          value={deliveryAddress}
-          onChange={(e) => setDeliveryAddress(e.target.value)}
+        <DeliveryInfoForm
+          formData={formData}
+          setFormData={setFormData}
           disabled={!deliveryInfoEditable}
-          className={deliveryInfoEditable ? styles.inputActive : styles.inputDisabled}
-          placeholder="Enter your delivery address"
         />
       </div>
       <h3 className={styles.sectionTitle}>Payment</h3>
       <div className={styles.paymentOptions}>
-        <button
-          className={selectedPayment === 'credit' ? styles.selected : ''}
-          onClick={() => handlePaymentChange('credit')}
-        >
-          Credit Card
-        </button>
-        <button
-          className={selectedPayment === 'paypal' ? styles.selected : ''}
-          onClick={() => handlePaymentChange('paypal')}
-        >
-          Paypal
-        </button>
+        <div className={styles.paymentOption}>
+          <input
+            type="radio"
+            id="credit"
+            name="paymentMethod"
+            checked={selectedPayment === 'credit'}
+            onChange={() => handlePaymentChange('credit')}
+          />
+          <label htmlFor="credit">Credit Card</label>
+        </div>
+        <div className={styles.paymentOption}>
+          <input
+            type="radio"
+            id="paypal"
+            name="paymentMethod"
+            checked={selectedPayment === 'paypal'}
+            onChange={() => handlePaymentChange('paypal')}
+          />
+          <label htmlFor="paypal">Paypal</label>
+        </div>
       </div>
       {selectedPayment === 'credit' && (
         <div className={styles.creditCardForm}>
-          <input
-            type="text"
-            placeholder="Card Number"
-            value={creditCardInfo.cardNumber}
-            onChange={(e) =>
-              setCreditCardInfo({ ...creditCardInfo, cardNumber: e.target.value })
-            }
-            className={styles.inputActive}
-          />
-          <input
-            type="text"
-            placeholder="Expiry Date"
-            value={creditCardInfo.expiry}
-            onChange={(e) =>
-              setCreditCardInfo({ ...creditCardInfo, expiry: e.target.value })
-            }
-            className={styles.inputActive}
-          />
-          <input
-            type="text"
-            placeholder="CVV"
-            value={creditCardInfo.cvv}
-            onChange={(e) =>
-              setCreditCardInfo({ ...creditCardInfo, cvv: e.target.value })
-            }
-            className={styles.inputActive}
+          <CreditCardForm
+            formData={creditCardInfo}
+            setFormData={setCreditCardInfo}
           />
         </div>
       )}
