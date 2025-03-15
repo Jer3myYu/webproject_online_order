@@ -17,13 +17,25 @@
 }
   
 .title {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
     font-size: 16px;
-    font-weight: bold;
+    line-height: 140%;
+    color: #1E1E1E;
 }
   
 .description {
+    font-family: 'Roboto', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+    line-height: 140%;
     font-size: 14px;
-    color: #666;
+    color: #757575;
     margin-top: 4px;
 }
   

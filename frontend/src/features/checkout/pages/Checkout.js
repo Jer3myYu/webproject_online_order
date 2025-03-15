@@ -13,8 +13,8 @@ const Checkout = () => {
 
   // Mock cart items for demonstration
   const cartItems = [
-    { id: 1, name: 'Chicken Fries - 9 Pc', price: 4.89 },
-    { id: 2, name: 'Whopper Meal', price: 10.59 }
+    { id: 1, name: 'Chicken Fries - 9 Pc', description: '9pcs', price: 4.89 },
+    { id: 2, name: 'Whopper Meal', description: 'Our Whopper Sandwich is a 1/4 lb* of savory flame-grilled beef topped with juicy tomatoes, fresh lettuce, creamy mayonnaise, ketchup, crunchy pickles, and sliced white onions on a soft sesame seed bun.', price: 10.59 }
   ];
 
   const subtotal = cartItems.reduce((acc, item) => acc + item.price, 0);
