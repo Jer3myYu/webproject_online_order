@@ -49,7 +49,7 @@ const DeliveryInfoForm = ({
       </div>
 
       <div className={styles.row}>
-        <div className={`${styles.inputGroup} ${styles.wide}`}>
+        <div className={styles.inputGroup}>
           <input
             type="text"
             value={formData.streetAddress}
