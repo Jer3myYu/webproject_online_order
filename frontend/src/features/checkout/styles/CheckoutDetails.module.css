@@ -112,7 +112,7 @@
 
 .checkoutButton {
     padding: 12px;
-    background: #007bff;
+    background: #2C2C2C;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -129,5 +129,5 @@
 }
 
 .checkoutButton:hover {
-    background: #0056b3;
+    background: #2c2c2cc9;
 }

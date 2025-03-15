@@ -27,18 +27,26 @@ const OrderSummary = ({
       </div>
       <h3 className={styles.subtitle}>Delivery Method</h3>
       <div className={styles.deliveryOptions}>
-        <button
-          className={deliveryMethod === 'delivery' ? styles.selected : ''}
-          onClick={() => setDeliveryMethod('delivery')}
-        >
-          Delivery
-        </button>
-        <button
-          className={deliveryMethod === 'pickup' ? styles.selected : ''}
-          onClick={() => setDeliveryMethod('pickup')}
-        >
-          Pickup
-        </button>
+        <div className={styles.deliveryOption}>
+          <input
+            type="radio"
+            id="delivery"
+            name="deliveryMethod"
+            checked={deliveryMethod === 'delivery'}
+            onChange={() => setDeliveryMethod('delivery')}
+          />
+          <label htmlFor="delivery">Delivery</label>
+        </div>
+        <div className={styles.deliveryOption}>
+          <input
+            type="radio"
+            id="pickup"
+            name="deliveryMethod"
+            checked={deliveryMethod === 'pickup'}
+            onChange={() => setDeliveryMethod('pickup')}
+          />
+          <label htmlFor="pickup">Pickup</label>
+        </div>
       </div>
       <div className={styles.summaryTotals}>
         <div className={styles.row}>
