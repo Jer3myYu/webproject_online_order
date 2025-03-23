@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from '../../styles/SignUpBody.module.css';
 import AuthToggleButton from '../../components/AuthToggleButton';
+import { signup } from '../../../../utils/api';
 
 const SignUpBody = () => {
   const [email, setEmail] = useState('');
@@ -8,11 +9,12 @@ const SignUpBody = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
-  // State for error messages
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const handleSignUp = (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
+    setLoading(true);
 
     // Check if password and confirmPassword match
     if (password !== confirmPassword) {
@@ -23,8 +25,13 @@ const SignUpBody = () => {
     // Clear any previous errors
     setError('');
 
-    // Add your sign up logic here
-    console.log('Sign Up with:', { email, password, confirmPassword, firstName, lastName });
+    try {
+      await signup({ email, password, firstName, lastName });
+      console.log('SignUp successful');
+    } catch (error) {
+      console.error('SignUp failed:', error);
+    }
+    setLoading(false);
   };
 
   return (

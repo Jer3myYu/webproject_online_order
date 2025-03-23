@@ -29,11 +29,11 @@ export const login = async (credentials) => {
 export const signup = async (data) => {
     try {
         const response = await axios.post(`${BASE_URL}/signup`, 
+            JSON.stringify(data),
             {
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data),
             }
         );
         return response.data;
