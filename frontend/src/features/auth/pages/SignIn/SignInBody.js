@@ -1,15 +1,23 @@
 import React, { useState } from 'react';
 import styles from '../../styles/SignInBody.module.css';
 import AuthToggleButton from '../../components/AuthToggleButton';
+import { login } from '../../../../utils/api';
 
 const SignInBody = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSignIn = (e) => {
+  const handleSignIn = async (e) => {
     e.preventDefault();
-    // Add your sign in logic here
-    console.log('Sign in with:', { email, password });
+    setLoading(true);
+    try {
+      await login({ email, password });
+      console.log('Login successful');
+    } catch (error) {
+      console.error('Login failed:', error);
+    }
+    setLoading(false);
   };
 
   return (

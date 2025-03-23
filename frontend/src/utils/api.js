@@ -4,7 +4,7 @@ const BASE_URL = process.env.REACT_APP_API_URL;
 
 export const login = async (credentials) => {
     try {
-        const response = await axios.post(`${BASE_URL}/login?username=${credentials.username}&password=${credentials.password}`,
+        const response = await axios.post(`${BASE_URL}/login?username=${credentials.email}&password=${credentials.password}`,
             {
                 headers: {
                     'Content-Type': 'application/json',
