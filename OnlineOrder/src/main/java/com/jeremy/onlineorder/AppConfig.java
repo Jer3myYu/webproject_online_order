@@ -43,7 +43,12 @@ public class AppConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+                // CORS (Cross-Origin Resource Sharing) is a browser security mechanism that allows controlled access to resources from a different domain than the one that served the web page. It involves server-side headers to specify which origins can access the resources.
+                .cors() // Enable CORS support in Spring Security (this uses your GlobalCorsConfig)
+                .and()
+                // CSRF (Cross-Site Request Forgery) is an attack where a malicious site tricks a user’s browser into making unwanted actions on a trusted site where the user is authenticated. CSRF protection typically involves generating and validating a unique token for each state-changing request, ensuring the request is intentional.
                 .csrf().disable()
+                // CSRF defends against unauthorized actions on behalf of a user, while CORS controls resource sharing across different origins.
                 .authorizeHttpRequests(auth ->
                         auth
                                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()

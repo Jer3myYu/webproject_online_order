@@ -21,3 +21,8 @@ logging:
     org.springframework.jdbc.datasource.init: DEBUG
     org.springframework.jdbc.core: DEBUG # SQL
 
+cors:
+  allowed-origins:
+    - "http://192.168.1.39:3000"
+    - "http://192.168.1.39:8081"
+    - "http://localhost:3000"
